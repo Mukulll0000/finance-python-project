@@ -1,0 +1,44 @@
+apple_stock_market_price = 135
+
+apple_stock_bought = 20
+apple_stock_purchase_price = 60
+total_apple_stocks_value = apple_stock_bought * apple_stock_purchase_price
+
+apple_stock_new_added = 10
+apple_stock_bp_new = 145
+total_apple_stocks_value_new = apple_stock_new_added * apple_stock_bp_new
+
+apple_stock_sold = 8
+apple_stock_sp = 120
+total_apple_stocks_sold_value = apple_stock_sold * apple_stock_sp
+
+Total_apple_stocks_after_selling = apple_stock_bought + apple_stock_new_added - apple_stock_sold
+
+
+
+
+Total_current_value_of_apple_stocks = Total_apple_stocks_after_selling * apple_stock_market_price
+print(Total_current_value_of_apple_stocks)
+
+
+
+average_price_per_stock = (total_apple_stocks_value + total_apple_stocks_value_new) / (apple_stock_bought + apple_stock_new_added)
+print(average_price_per_stock)
+
+
+
+total_gain_loss = Total_current_value_of_apple_stocks - total_apple_stocks_value - total_apple_stocks_value_new + total_apple_stocks_sold_value
+print(total_gain_loss)
+
+
+
+tax_rate_france = 0.3
+tax_amount = total_gain_loss * tax_rate_france
+print(tax_amount)
+
+
+
+tax_exempt_belgium = 500
+tax_rate_belgium = 0.40
+tax_amount_belgium = max(0, (total_gain_loss - tax_exempt_belgium) * tax_rate_belgium)
+print(tax_amount_belgium)
